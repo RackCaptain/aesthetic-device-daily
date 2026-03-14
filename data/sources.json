@@ -1,0 +1,39 @@
+{
+  "sources": [
+    {
+      "name": "NMPA 医疗器械审批",
+      "url": "https://www.nmpa.gov.cn/",
+      "type": "web",
+      "category": "policy",
+      "enabled": true
+    },
+    {
+      "name": "FDA 510(k) Clearances",
+      "url": "https://www.fda.gov/medical-devices/510k-clearances",
+      "type": "web",
+      "category": "policy",
+      "enabled": true
+    },
+    {
+      "name": "Cynosure News",
+      "url": "https://www.cynosure.com/news/",
+      "type": "web",
+      "category": "product",
+      "enabled": true
+    },
+    {
+      "name": "Lumenis News",
+      "url": "https://lumenis.com/news/",
+      "type": "web",
+      "category": "product",
+      "enabled": true
+    },
+    {
+      "name": "医美视界",
+      "url": "https://www.piont.net/",
+      "type": "web",
+      "category": "news",
+      "enabled": true
+    }
+  ]
+}
