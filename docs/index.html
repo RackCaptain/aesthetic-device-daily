@@ -1,1 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>光电医疗美容设备行业日报 | Aesthetic Device Daily</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans SC', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glass-effect {
+            background: rgba(17, 24, 39, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+        }
+        .dark .card-hover:hover {
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+        .status-dot {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 w-full z-50 glass-effect border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="relative">
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full absolute top-0 status-dot"></div>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight">
+                        <span class="gradient-text">Aesthetic</span>
+                        <span class="text-gray-700 dark:text-gray-300">Daily</span>
+                    </span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                        <i class="fas fa-moon dark:hidden text-gray-600"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                    <a href="https://github.com/RackCaptain/aesthetic-device-daily" target="_blank" 
+                       class="flex items-center space-x-2 px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition">
+                        <i class="fab fa-github"></i>
+                        <span class="hidden sm:inline">GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <header class="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center animate-fade-in">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-medium mb-6">
+                    <i class="fas fa-bolt mr-2 text-accent-500"></i>
+                    每日 08:00 自动更新
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    光电医疗美容设备
+                    <br>
+                    <span class="gradient-text">行业日报</span>
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
+                    聚焦激光、射频、超声等光电美容设备行业动态，每日精选技术进展、市场趋势与政策资讯
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                    <span class="flex items-center"><i class="fas fa-calendar-alt mr-2"></i><span id="current-date">--</span></span>
+                    <span class="hidden sm:inline">•</span>
+                    <span class="flex items-center"><i class="fas fa-sync-alt mr-2"></i>Auto-generated by OpenClaw</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 统计卡片 -->
+    <section class="px-4 sm:px-6 lg:px-8 pb-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg card-hover border border-gray-100 dark:border-gray-700">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl">
+                            <i class="fas fa-newspaper text-blue-600 dark:text-blue-400 text-xl"></i>
+                        </div>
+                        <span class="text-xs font-medium text-gray-400">今日</span>
+                    </div>
+                    <p class="text-3xl font-bold text-gray-800 dark:text-white mb-1">--</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">资讯总数</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg card-hover border border-gray-100 dark:border-gray-700">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-xl">
+                            <i class="fas fa-microchip text-green-600 dark:text-green-400 text-xl"></i>
+                        </div>
+                        <span class="text-xs font-medium text-gray-400">技术</span>
+                    </div>
+                    <p class="text-3xl font-bold text-gray-800 dark:text-white mb-1">--</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">技术动态</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg card-hover border border-gray-100 dark:border-gray-700">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 bg-yellow-100 dark:bg-yellow-900/30 rounded-xl">
+                            <i class="fas fa-gavel text-yellow-600 dark:text-yellow-400 text-xl"></i>
+                        </div>
+                        <span class="text-xs font-medium text-gray-400">政策</span>
+                    </div>
+                    <p class="text-3xl font-bold text-gray-800 dark:text-white mb-1">--</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">政策法规</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg card-hover border border-gray-100 dark:border-gray-700">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-xl">
+                            <i class="fas fa-rocket text-purple-600 dark:text-purple-400 text-xl"></i>
+                        </div>
+                        <span class="text-xs font-medium text-gray-400">产品</span>
+                    </div>
+                    <p class="text-3xl font-bold text-gray-800 dark:text-white mb-1">--</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">产品发布</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要内容区 -->
+    <main class="px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- 左侧：资讯列表 -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800 dark:text-white">
+                            <i class="fas fa-stream mr-2 text-primary-500"></i>今日精选
+                        </h2>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1 text-sm rounded-full bg-primary-500 text-white">全部</button>
+                            <button class="px-3 py-1 text-sm rounded-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-300 transition">技术</button>
+                            <button class="px-3 py-1 text-sm rounded-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-300 transition">市场</button>
+                        </div>
+                    </div>
+
+                    <!-- 初始化提示 -->
+                    <div id="init-message" class="bg-white dark:bg-gray-800 rounded-2xl p-12 shadow-lg border border-gray-100 dark:border-gray-700 text-center">
+                        <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary-400 to-purple-600 flex items-center justify-center animate-pulse-slow">
+                            <i class="fas fa-robot text-4xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">日报初始化中...</h3>
+                        <p class="text-gray-600 dark:text-gray-400 max-w-md mx-auto mb-6">
+                            本项目每天 08:00 自动抓取光电医疗美容设备行业最新资讯。
+                            <br>首次运行后将显示完整内容。
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-3 text-sm text-gray-500">
+                            <span class="flex items-center px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                                <i class="fas fa-clock mr-2"></i>下次更新：明天 08:00
+                            </span>
+                            <span class="flex items-center px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                                <i class="fas fa-database mr-2"></i>数据来源：NMPA / FDA / 行业媒体
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- 资讯列表容器 -->
+                    <div id="news-container" class="space-y-4 hidden">
+                        <!-- 动态内容将插入这里 -->
+                    </div>
+                </div>
+
+                <!-- 右侧：侧边栏 -->
+                <div class="space-y-6">
+                    <!-- 关于项目 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+                        <h3 class="font-bold text-gray-800 dark:text-white mb-4 flex items-center">
+                            <i class="fas fa-info-circle mr-2 text-primary-500"></i>关于日报
+                        </h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                            本日报每日自动收集光电医疗美容设备行业资讯，涵盖技术创新、市场动态、政策法规等领域。
+                        </p>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center text-gray-600 dark:text-gray-400">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                每日自动更新
+                            </div>
+                            <div class="flex items-center text-gray-600 dark:text-gray-400">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                智能摘要生成
+                            </div>
+                            <div class="flex items-center text-gray-600 dark:text-gray-400">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                历史归档可查
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 热门标签 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+                        <h3 class="font-bold text-gray-800 dark:text-white mb-4 flex items-center">
+                            <i class="fas fa-tags mr-2 text-accent-500"></i>热门标签
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">激光设备</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300">射频美容</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300">超声刀</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300">光子嫩肤</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300">NMPA审批</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300">FDA认证</span>
+                        </div>
+                    </div>
+
+                    <!-- 历史归档 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+                        <h3 class="font-bold text-gray-800 dark:text-white mb-4 flex items-center">
+                            <i class="fas fa-archive mr-2 text-gray-500"></i>历史归档
+                        </h3>
+                        <div id="archive-list" class="space-y-2">
+                            <p class="text-sm text-gray-500 text-center py-4">暂无历史数据</p>
+                        </div>
+                    </div>
+
+                    <!-- 数据来源 -->
+                    <div class="bg-gradient-to-br from-primary-500 to-purple-600 rounded-2xl p-6 text-white">
+                        <h3 class="font-bold mb-4 flex items-center">
+                            <i class="fas fa-database mr-2"></i>数据来源
+                        </h3>
+                        <ul class="space-y-2 text-sm text-white/90">
+                            <li class="flex items-center"><i class="fas fa-check mr-2 text-green-300"></i>国家药监局 (NMPA)</li>
+                            <li class="flex items-center"><i class="fas fa-check mr-2 text-green-300"></i>FDA 510(k) 审批</li>
+                            <li class="flex items-center"><i class="fas fa-check mr-2 text-green-300"></i>行业媒体资讯</li>
+                            <li class="flex items-center"><i class="fas fa-check mr-2 text-green-300"></i>厂商官方动态</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <span class="text-gray-600 dark:text-gray-400 text-sm">
+                        © <span id="footer-year">2025</span> Aesthetic Device Daily
+                    </span>
+                </div>
+                <div class="flex items-center space-x-6 text-sm text-gray-500 dark:text-gray-400">
+                    <span class="flex items-center">
+                        <i class="fas fa-robot mr-2"></i>
+                        Powered by OpenClaw
+                    </span>
+                    <span class="flex items-center">
+                        <i class="fas fa-heart mr-2 text-red-500"></i>
+                        Hosted on GitHub Pages
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 主题切换
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+
+        // 初始化主题
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+
+        // 设置当前日期
+        const now = new Date();
+        const dateStr = now.toLocaleDateString('zh-CN', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long'
+        });
+        document.getElementById('current-date').textContent = dateStr;
+        document.getElementById('footer-year').textContent = now.getFullYear();
+
+        // 模拟加载数据（实际项目中将从 API 获取）
+        setTimeout(() => {
+            // 这里可以添加实际的数据加载逻辑
+        }, 1000);
+    </script>
+</body>
+</html>
 
